@@ -1,0 +1,33 @@
+#+TITLE: Generate new address
+
+* Description
+
+  Example generating address from public key using BDK through JNI.
+  Take a compressed public key as argument and output a generated address.
+
+* Prerequisites
+
+  - JDK
+  - Cargo
+  - Clojure
+    
+* How to run
+
+  #+BEGIN_SRC sh
+cd rust
+cargo build
+cd ../clojure
+javac src-java/GenerateNewAddress.java
+# Java
+java -Djava.library.path=../rust/target/debug/ -cp src-java GenerateNewAddress tprv8ZgxMBicQKsPdy6LMhUtFHAgpocR8GC6QmwMSFpZs7h6Eziw3SpThFfczTDh5rW2krkqffa11UpX3XkeTTB2FvzZKWXqPY54Y6Rq4AQ5R8L
+# Clojure
+clj -M:lib -m core tprv8ZgxMBicQKsPdy6LMhUtFHAgpocR8GC6QmwMSFpZs7h6Eziw3SpThFfczTDh5rW2krkqffa11UpX3XkeTTB2FvzZKWXqPY54Y6Rq4AQ5R8L
+  #+END_SRC
+  
+* References
+
+  - https://github.com/bitcoindevkit/bdk#generate-a-few-addresses
+  - https://bitcoindevkit.org/tutorials/hello-world/
+  - https://docs.rs/jni/0.14.0/jni/
+  - https://github.com/borkdude/clojure-rust-graalvm
+    

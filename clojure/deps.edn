@@ -1,0 +1,4 @@
+{:paths ["src" "src-java"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.3"}}
+ :aliases {:lib
+           {:jvm-opts ["-Djava.library.path=../rust/target/debug"]}}}

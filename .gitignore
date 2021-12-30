@@ -1,0 +1,3 @@
+rust/target
+clojure/.cpcache
+clojure/src-java/*.class
